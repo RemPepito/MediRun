@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - MediRun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background-color: var(--primary-color);
+            padding: 60px 0 30px;
+            color: white;
+            text-align: center;
+        }
+        
+        .faq-main {
+            padding: 60px 0;
+        }
+        
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .faq-tab {
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .faq-tab:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .faq-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .faq-category {
+            margin-bottom: 40px;
+            display: none;
+        }
+        
+        .faq-category.active {
+            display: block;
+        }
+        
+        .faq-category h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .faq-question h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .faq-icon {
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-icon i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-icon i {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .contact-cta {
+            margin-top: 40px;
+            text-align: center;
+            background-color: var(--secondary-color);
+            padding: 40px;
+            border-radius: var(--radius);
+        }
+        
+        .contact-cta h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .contact-cta p {
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Ensure logo color consistency */
+        .logo h1, .logo h1 a {
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--primary-dark);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Medi<span>Run!</span></a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about MediRun</p>
+        </div>
+    </section>
+    
+    <!-- FAQ Main Section -->
+    <section class="faq-main">
+        <div class="container">
+            <div class="faq-content">
+                <div class="faq-tabs">
+                    <div class="faq-tab active" data-category="general">General</div>
+                    <div class="faq-tab" data-category="ordering">Ordering</div>
+                    <div class="faq-tab" data-category="delivery">Delivery</div>
+                    <div class="faq-tab" data-category="payment">Payment</div>
+                    <div class="faq-tab" data-category="account">Account</div>
+                </div>
+                
+                <!-- General FAQs -->
+                <div class="faq-category active" id="general">
+                    <h2>General Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What is MediRun?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MediRun is a revolutionary medicine delivery application in the Philippines that connects users with local pharmacies to deliver medications directly to your doorstep. Our comprehensive platform allows you to:</p>
+                            <ul>
+                                <li>Browse medications from multiple pharmacy partners</li>
+                                <li>Upload prescriptions securely through the app</li>
+                                <li>Compare prices across different pharmacies</li>
+                                <li>Schedule one-time deliveries or set up recurring orders</li>
+                                <li>Track your delivery in real-time</li>
+                                <li>Chat with licensed pharmacists for medication advice</li>
+                            </ul>
+                            <p>Founded in 2023, MediRun was created to address the challenge of medication access for Filipinos, especially during emergencies and for those with mobility constraints. Our mission is to make healthcare more accessible to everyone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Where is MediRun available?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MediRun currently operates in major cities and urban areas across the Philippines:</p>
+                            <ul>
+                                <li><strong>Luzon:</strong> Metro Manila (including all 16 cities and 1 municipality), Cavite, Laguna, Batangas, Rizal, Bulacan, Pampanga, and Baguio City</li>
+                                <li><strong>Visayas:</strong> Cebu City, Mandaue, Lapu-Lapu, Iloilo City, Bacolod, and Tacloban</li>
+                                <li><strong>Mindanao:</strong> Davao City, Cagayan de Oro, General Santos, and Zamboanga City</li>
+                            </ul>
+                            <p>We're rapidly expanding our coverage to include more provincial areas. By Q3 2025, we plan to reach 75% of the Philippine urban population.</p>
+                            <p>To check if MediRun delivers to your specific location:</p>
+                            <ol>
+                                <li>Open the MediRun app</li>
+                                <li>Go to the home screen and tap "Delivery Address"</li>
+                                <li>Enter your complete address or use the location pin</li>
+                                <li>The app will immediately confirm if we service your area</li>
+                            </ol>
+                            <p>If we're not in your area yet, you can register for notifications, and we'll alert you once MediRun becomes available in your location.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What pharmacies does MediRun partner with?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MediRun has established strategic partnerships with both major pharmacy chains and independent local pharmacies across the Philippines to ensure comprehensive medication coverage:</p>
+                            <h4>Major Chain Partners:</h4>
+                            <ul>
+                                <li><strong>Mercury Drug</strong> - All branches in covered regions</li>
+                                <li><strong>Watsons</strong> - Both standalone and mall locations</li>
+                                <li><strong>Southstar Drug</strong> - Complete network coverage</li>
+                                <li><strong>Rose Pharmacy</strong> - All major branches</li>
+                                <li><strong>Generika</strong> - Nationwide network partnership</li>
+                                <li><strong>The Generics Pharmacy</strong> - Select locations</li>
+                                <li><strong>HealthFirst Pharmacy</strong> - All branches</li>
+                            </ul>
+                            <h4>Local and Specialized Pharmacies:</h4>
+                            <ul>
+                                <li>Over 250 independently owned local pharmacies</li>
+                                <li>Specialized pharmacies carrying rare medications</li>
+                                <li>Compounding pharmacies for custom prescriptions</li>
+                            </ul>
+                            <p>Our system intelligently searches across our entire pharmacy network to find your medications, comparing prices and availability in real-time. If you have a preferred pharmacy, you can mark it as a favorite in the app.</p>
+                            <p>We're constantly expanding our pharmacy network, adding approximately 30-50 new partners every month. If you know a pharmacy that's not yet part of our network, you can suggest it through the app's feedback feature.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Is MediRun available 24/7?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! MediRun's platform and customer service are available 24 hours a day, 7 days a week, but there are some important details to keep in mind:</p>
+                            
+                            <h4>Always Available:</h4>
+                            <ul>
+                                <li><strong>MediRun App:</strong> Browse medications, place orders, and track deliveries 24/7</li>
+                                <li><strong>Customer Support:</strong> Our helpline (1-800-MEDIRUN) and in-app chat support operate round-the-clock</li>
+                                <li><strong>Order Processing:</strong> Orders can be submitted at any time</li>
+                            </ul>
+                            
+                            <h4>Delivery Hours:</h4>
+                            <ul>
+                                <li><strong>Metro Manila & Major Cities:</strong> Deliveries from 6:00 AM to 12:00 AM daily</li>
+                                <li><strong>Emergency Deliveries:</strong> Available 24/7 for urgent medication needs (additional fee applies)</li>
+                                <li><strong>Provincial Areas:</strong> Typically 7:00 AM to 10:00 PM, varies by location</li>
+                            </ul>
+                            
+                            <h4>Pharmacy Operating Hours:</h4>
+                            <p>Order fulfillment depends on pharmacy operating hours:</p>
+                            <ul>
+                                <li><strong>24/7 Pharmacies:</strong> Orders can be fulfilled anytime</li>
+                                <li><strong>Standard Pharmacies:</strong> Orders placed after hours will be processed when the pharmacy opens</li>
+                                <li><strong>Pre-orders:</strong> You can schedule advance deliveries for recurring medications</li>
+                            </ul>
+                            
+                            <p>For emergency medication needs during off-hours, our system automatically routes your order to 24-hour pharmacies and prioritizes dispatch.</p>
+                            <p>You can view the exact delivery times for your location in the app by entering your delivery address and checking the "Service Hours" section.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ordering FAQs -->
+                <div class="faq-category" id="ordering">
+                    <h2>Ordering Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>How do I order medications through MediRun?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ordering is simple:</p>
+                            <ol>
+                                <li>Download the MediRun app and create an account</li>
+                                <li>Search for your medications or browse by category</li>
+                                <li>Add items to your basket</li>
+                                <li>For prescription medications, upload a clear photo of your valid prescription</li>
+                                <li>Proceed to checkout, select your payment method, and confirm your order</li>
+                                <li>Track your delivery right from the app</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Can I order prescription medications?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can order prescription medications through MediRun. You'll need to upload a clear photo of a valid prescription from a licensed healthcare provider. Our team will verify the prescription before processing your order, and you may need to present the original prescription to the delivery person upon receiving your medication.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What if the medication I need is not available?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If a medication is not available from one pharmacy, our app will show you alternative pharmacies that may have it in stock. For rare medications, you can use our "Special Request" feature, and our team will help locate the medication from our extended network of partner pharmacies. If we still can't find it, we'll notify you and provide possible alternatives where appropriate.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Can I order other health products besides medications?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Besides medications, you can order various health and wellness products available at our partner pharmacies, including vitamins, supplements, first aid supplies, personal care items, and other health essentials.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Delivery FAQs -->
+                <div class="faq-category" id="delivery">
+                    <h2>Delivery Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>How fast will my medicine be delivered?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MediRun delivers most medications within 60-90 minutes of placing your order, depending on your location and the availability of the medication. For rare medications that need to be sourced from multiple pharmacies, delivery may take up to 3 hours. You can track the status of your delivery in real-time through the app.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Is there a delivery fee?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, a small delivery fee is charged based on your location. The standard fee is ₱50, but it may vary depending on distance and order size. MediSprinter subscribers enjoy discounted or free delivery depending on their subscription plan. The exact delivery fee will be displayed before you confirm your order.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Can I schedule a delivery for a later time?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, MediRun offers scheduled deliveries. When placing your order, you can select a preferred delivery time slot, allowing you to receive your medications at a time that's convenient for you. This feature is especially useful for regular medication refills.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What if I'm not available to receive my delivery?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you're not available to receive your delivery, you can:</p>
+                            <ul>
+                                <li>Designate an authorized person to receive it on your behalf</li>
+                                <li>Reschedule the delivery through the app</li>
+                                <li>Provide special delivery instructions when placing your order</li>
+                            </ul>
+                            <p>For prescription medications, the recipient may need to show identification and the original prescription.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment FAQs -->
+                <div class="faq-category" id="payment">
+                    <h2>Payment Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What payment methods are accepted?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MediRun accepts multiple payment methods:</p>
+                            <ul>
+                                <li>Cash on Delivery (COD)</li>
+                                <li>GCash</li>
+                                <li>Credit/Debit Cards (Visa, Mastercard, JCB)</li>
+                                <li>Bank transfers (select banks)</li>
+                            </ul>
+                            <p>We're continuously adding more payment options to provide greater convenience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Is online payment secure?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all online payments through MediRun are secure. We use industry-standard encryption and security protocols to protect your payment information. We do not store your complete credit card details on our servers. All transactions are processed through trusted and PCI-compliant payment processors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>Can I use health insurance or HMO to pay for my medications?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, direct HMO or insurance payments are not available through the app. However, we provide detailed receipts that you can submit to your insurance provider for reimbursement according to your policy. We're working on integrating direct HMO and insurance payments in the future.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What is MediSprinter and how much does it cost?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MediSprinter is our subscription service that offers exclusive benefits:</p>
+                            <ul>
+                                <li>Free delivery on orders over ₱500</li>
+                                <li>Discounted delivery fees on all orders</li>
+                                <li>Priority customer support</li>
+                                <li>Exclusive deals and discounts</li>
+                                <li>Access to medication reminders and tracking features</li>
+                            </ul>
+                            <p>MediSprinter is available for ₱199/month or ₱1,999/year, providing significant savings for regular users.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Account FAQs -->
+                <div class="faq-category" id="account">
+                    <h2>Account Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>How do I create a MediRun account?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To create a MediRun account:</p>
+                            <ol>
+                                <li>Download the MediRun app from the App Store or Google Play</li>
+                                <li>Open the app and tap "Register"</li>
+                                <li>Enter your phone number and email address</li>
+                                <li>Complete the verification process</li>
+                                <li>Fill in your personal information</li>
+                                <li>Add your delivery address</li>
+                                <li>Optionally, save your payment information for faster checkout</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>How can I update my delivery address?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To update your delivery address:</p>
+                            <ol>
+                                <li>Log in to your MediRun account</li>
+                                <li>Tap on your profile icon</li>
+                                <li>Select "Delivery Addresses"</li>
+                                <li>Tap "Edit" on an existing address or "Add New Address"</li>
+                                <li>Enter your updated address details</li>
+                                <li>Save your changes</li>
+                            </ol>
+                            <p>You can have multiple saved addresses and select the appropriate one during checkout.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>What should I do if I forget my password?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you forget your password:</p>
+                            <ol>
+                                <li>On the login screen, tap "Forgot Password"</li>
+                                <li>Enter the email address associated with your account</li>
+                                <li>Check your email for a password reset link</li>
+                                <li>Follow the instructions to create a new password</li>
+                            </ol>
+                            <p>If you don't receive the reset email, check your spam folder or contact our customer support for assistance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer(this)">
+                            <h3>How can I view my order history?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To view your order history:</p>
+                            <ol>
+                                <li>Log in to your MediRun account</li>
+                                <li>Tap on "Orders" in the bottom navigation bar</li>
+                                <li>You'll see a list of all your past orders</li>
+                                <li>Tap on any order to view its details, including items, total cost, and delivery information</li>
+                            </ol>
+                            <p>You can also reorder past medications directly from your order history for convenience.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="contact-cta">
+                    <h3>Still have questions?</h3>
+                    <p>If you couldn't find the answer you were looking for, our customer support team is here to help. Contact us anytime, and we'll get back to you as soon as possible.</p>
+                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Medi<span>Run!</span></h2>
+                    <p>Medicine delivery at your fingertips</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediRun. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Function to toggle FAQ answers
+        function toggleAnswer(element) {
+            // Get the parent faq-item
+            const faqItem = element.closest('.faq-item');
+            
+            // Get the answer element
+            const answer = faqItem.querySelector('.faq-answer');
+            
+            // Get the icon
+            const icon = element.querySelector('.faq-icon i');
+            
+            // Toggle the display
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.faq-tab');
+            const categories = document.querySelectorAll('.faq-category');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Deactivate all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Activate current tab
+                    this.classList.add('active');
+                    
+                    // Hide all categories
+                    categories.forEach(category => {
+                        category.classList.remove('active');
+                    });
+                    
+                    // Show selected category
+                    const categoryToShow = document.getElementById(this.getAttribute('data-category'));
+                    if (categoryToShow) {
+                        categoryToShow.classList.add('active');
+                    }
+                });
+            });
+            
+            // Initialize all answers as hidden
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MediRun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background-color: var(--primary-color);
+            padding: 60px 0 30px;
+            color: white;
+            text-align: center;
+        }
+        
+        .about-section {
+            padding: 60px 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .about-card {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .about-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .vision-mission {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .vision, .mission {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: var(--radius);
+        }
+        
+        .vision {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .mission {
+            border: 2px solid var(--primary-color);
+        }
+        
+        .team-section {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--primary-color);
+        }
+        
+        .team-member h3 {
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Ensure logo color consistency */
+        .logo h1, .logo h1 a {
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--primary-dark);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Medi<span>Run!</span></a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About MediRun</h1>
+            <p>Revolutionizing Medicine Delivery in the Philippines</p>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <p>MediRun was born from a simple yet powerful realization: in a world where almost everything can be delivered to your doorstep, why should medicine be any different?</p>
+            <p>Founded in 2025 by a team of healthcare professionals, tech enthusiasts, and logistics experts, MediRun aims to bridge the gap between traditional pharmacy services and the digital age.</p>
+            
+            <div class="vision-mission">
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>To create a society where healthcare accessibility is never a barrier, and where medicine delivery is as common and reliable as any other essential service.</p>
+                </div>
+                <div class="mission">
+                    <h3 style="color: var(--primary-color);">Our Mission</h3>
+                    <p>To provide fast, reliable, and accessible medicine delivery services across the Philippines, ensuring that no one has to compromise their health due to mobility constraints, time limitations, or geographic barriers.</p>
+                </div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Nationwide Coverage</h3>
+                    <p>MediRun operates across major regions in the Philippines—Luzon, Visayas, and Mindanao—with plans to expand to even more remote areas.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Pharmacy Partnerships</h3>
+                    <p>We've partnered with leading pharmacy chains like Mercury Drugstore, Watsons, Southstar, Rose Pharmacy, and Generika to ensure you have access to a wide range of medications.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Tech Innovation</h3>
+                    <p>Our platform is built on cutting-edge technology that ensures a seamless ordering process, real-time tracking, and secure transactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-description">The passionate minds behind MediRun's mission</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="images/profile1.jpg" alt="Mary Kate Saguin">
+                    </div>
+                    <h3>Mary Kate Saguin</h3>
+                    <div class="team-role">Head of UI/UX and Lead Design</div>
+                    <p>Mary Kate leads our design team, ensuring that MediRun provides an intuitive and accessible user experience for all customers.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="images/profile2.jpg" alt="Remwell Pepito">
+                    </div>
+                    <h3>Remwell Pepito</h3>
+                    <div class="team-role">Head of Sales & Financial Analyst</div>
+                    <p>Remwell drives MediRun's revenue growth and provides critical financial insights that guide our business decisions and investment strategies.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i> <!-- Note: profile3.jpg not found -->
+                    </div>
+                    <h3>Kimberyly Flores</h3>
+                    <div class="team-role">Head Researcher</div>
+                    <p>Kimberyly leads our research initiatives, analyzing market trends and user needs to ensure MediRun stays ahead of industry developments and customer expectations.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="images/profile4.jpg" alt="My King Uyguangco">
+                    </div>
+                    <h3>My King Uyguangco</h3>
+                    <div class="team-role">Senior Developer</div>
+                    <p>My King oversees the technical development of MediRun's platform, implementing innovative solutions and ensuring our application is robust, scalable, and cutting-edge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Medi<span>Run!</span></h2>
+                    <p>Medicine delivery at your fingertips</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediRun. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

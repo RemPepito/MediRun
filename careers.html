@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - MediRun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background-color: var(--primary-color);
+            padding: 60px 0 30px;
+            color: white;
+            text-align: center;
+        }
+        
+        .careers-intro {
+            padding: 60px 0;
+        }
+        
+        .benefits-section {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .openings-section {
+            padding: 60px 0;
+        }
+        
+        .job-list {
+            margin-top: 40px;
+        }
+        
+        .job-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .job-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .job-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .job-location {
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .job-location i {
+            margin-right: 5px;
+        }
+        
+        .job-type {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        .job-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .apply-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .apply-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .join-team {
+            background: linear-gradient(rgba(25, 165, 153, 0.9), rgba(25, 165, 153, 0.9)), url('images/team.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .join-team h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .join-team p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Ensure logo color consistency */
+        .logo h1, .logo h1 a {
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--primary-dark);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">Medi<span>Run!</span></a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Join Our Team</h1>
+            <p>Build your career with MediRun and help transform healthcare delivery in the Philippines</p>
+        </div>
+    </section>
+    
+    <!-- Careers Intro -->
+    <section class="careers-intro">
+        <div class="container">
+            <h2 class="section-title">Why Work at MediRun?</h2>
+            <p>At MediRun, we're not just building an app — we're building a healthier Philippines by making medicine accessible to everyone. We're looking for passionate individuals who share our vision and want to make a meaningful impact.</p>
+            <p>As a member of the MediRun team, you'll be part of a fast-growing startup that values innovation, inclusivity, and impact. Our work environment encourages creativity, fosters growth, and celebrates achievements.</p>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Benefits & Perks</h2>
+            <p class="section-description">We take care of our team so they can take care of our customers</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Comprehensive Healthcare</h3>
+                    <p>Medical, dental, and vision coverage for you and your dependents, plus mental health support.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Competitive Compensation</h3>
+                    <p>Above-industry salaries, performance bonuses, and potential equity options.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Generous Time Off</h3>
+                    <p>Flexible vacation policy, paid holidays, and paid sick leave to rest and recharge.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>Flexible Work</h3>
+                    <p>Remote-friendly environment with flexible hours and work-from-home options.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Budget</h3>
+                    <p>Annual budget for courses, conferences, and books to support your professional growth.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Events</h3>
+                    <p>Regular team-building activities, offsite retreats, and social events to foster connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Current Openings -->
+    <section class="openings-section">
+        <div class="container">
+            <h2 class="section-title">Current Openings</h2>
+            <p class="section-description">Join us in our mission to revolutionize healthcare delivery</p>
+            
+            <div class="job-list">
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Mobile App Developer</h3>
+                            <div class="job-location">
+                                <i class="fas fa-map-marker-alt"></i> Manila / Remote
+                            </div>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-description">
+                        <p>We're looking for a skilled Mobile Developer to join our product team. You'll be responsible for implementing new features, optimizing performance, and fixing bugs in our React Native mobile application.</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Logistics Coordinator</h3>
+                            <div class="job-location">
+                                <i class="fas fa-map-marker-alt"></i> Cebu
+                            </div>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-description">
+                        <p>As a Logistics Coordinator, you'll oversee our delivery operations in the Visayas region, ensuring medications are delivered timely and efficiently to our customers.</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">UI/UX Designer</h3>
+                            <div class="job-location">
+                                <i class="fas fa-map-marker-alt"></i> Manila / Remote
+                            </div>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-description">
+                        <p>Join our design team to create intuitive and accessible user experiences that make healthcare more accessible to Filipinos across the country.</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Pharmacy Partnership Manager</h3>
+                            <div class="job-location">
+                                <i class="fas fa-map-marker-alt"></i> Manila
+                            </div>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-description">
+                        <p>Help expand our network of pharmacy partners across Luzon, negotiating partnerships and ensuring smooth operations between MediRun and our pharmacy partners.</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Customer Support Representative</h3>
+                            <div class="job-location">
+                                <i class="fas fa-map-marker-alt"></i> Davao / Remote
+                            </div>
+                        </div>
+                        <span class="job-type">Part-time</span>
+                    </div>
+                    <div class="job-description">
+                        <p>Provide excellent support to our customers, helping them navigate the app, resolve issues, and ensure they have a positive experience with MediRun.</p>
+                    </div>
+                    <a href="#" class="apply-button">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Join Team CTA -->
+    <section class="join-team">
+        <div class="container">
+            <h2>Don't See a Role That Fits?</h2>
+            <p>We're always looking for talented individuals to join our team. Send us your resume and tell us how you can contribute to MediRun's mission.</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Medi<span>Run!</span></h2>
+                    <p>Medicine delivery at your fingertips</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediRun. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
